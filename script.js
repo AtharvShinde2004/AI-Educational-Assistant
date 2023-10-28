@@ -1,10 +1,13 @@
 const startListeningButton = document.getElementById('start-listening');
 const response = document.getElementById('response');
 const recognition = new webkitSpeechRecognition();
+let isListening = false;
+
 recognition.continuous = true;
 
 recognition.onstart = function() {
   startListeningButton.textContent = 'Listening...';
+  isListening = true;
 };
 
 recognition.onresult = function(event) {
@@ -16,16 +19,22 @@ recognition.onresult = function(event) {
   } else if (transcript.includes('search')) {
     const query = transcript.replace('search', '').trim();
     searchWikipedia(query);
+  } else if (transcript.includes('stop') || transcript.includes('exit')) {
+    recognition.stop();
+    isListening = false;
+    startListeningButton.textContent = 'Start Listening';
+    speak('Assistant stopped. Click the button to start listening again.');
   }
 };
 
 recognition.onend = function() {
-  startListeningButton.textContent = 'Start Listening';
-  recognition.start();
+  if (isListening) {
+    recognition.start();
+  }
 };
 
 startListeningButton.addEventListener('click', function() {
-  if (recognition.active) {
+  if (isListening) {
     recognition.stop();
   } else {
     recognition.start();
@@ -37,7 +46,6 @@ function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
   synth.speak(utterance);
 }
-
 async function searchWikipedia(query) {
   const apiUrl = `http://localhost/search-wikipedia.php?query=${query}`;
 
