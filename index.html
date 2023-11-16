@@ -1,21 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Educational Assistant</h1>
-    <button id="start-listening">Start Listening</button>
-    <button id="stop-assistant">Stop Assistant</button> <!-- Add the stop button -->
-    <div id="response"></div>
-  
-    <!-- Watermark -->
-    <div class="footer">
-      <p>Atharv Shinde</p>
-      <p>Created by Atharv Shinde</p>
+  <head>
+    <!-- Include the external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <!-- Include the Montserrat font from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main container for the webpage -->
+    <div class="container">
+      <!-- Website name/header -->
+      <h1 class="website-name">Educational Assistant</h1>
+
+      <!-- Content section -->
+      <div class="content">
+        <!-- Button to start listening -->
+        <button id="start-listening" class="button">Start Listening</button>
+        <!-- Button to stop the assistant -->
+        <button id="stop-assistant" class="button stop-button">
+          Stop Assistant
+        </button>
+
+        <!-- Display area for the recognized speech response -->
+        <div id="response" class="box"></div>
+
+        <!-- Display area for the spoken text by the assistant -->
+        <div id="spoken-text" class="box"></div>
+
+        <!-- Commands section with available commands -->
+        <div id="commands-section">
+          <!-- Title for the commands section -->
+          <h2 class="commands-title">Available Commands</h2>
+
+          <!-- List of available commands with descriptions -->
+          <ul class="commands-list">
+            <li class="command-item">
+              Say <strong>"Hello" </strong>to greet the assistant.
+            </li>
+            <li class="command-item">
+              Say <strong>"Teach me about [topic]"</strong> to get information
+              on a specific topic.
+            </li>
+            <li class="command-item">
+              Say <strong>"Tell me about yourself"</strong> to learn more about
+              the assistant.
+            </li>
+            <li class="command-item">
+              Say <strong>"Stop" or "Exit" </strong>to stop the assistant from
+              listening.
+            </li>
+            <!-- Add more commands as needed -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Watermark in the footer -->
+      <div class="footer">
+        <p>Created by Atharv Shinde</p>
+      </div>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+
+    <!-- Include the JavaScript file -->
+    <script src="script.js"></script>
+  </body>
 </html>

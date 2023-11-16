@@ -1,36 +1,41 @@
+/* Reset some default styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: Montserrat, Arial, sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
 }
 
+/* Main container styling */
 .container {
+  background-color: #ffffff;
+  max-width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  justify-content: flex-start;
   padding: 20px;
-  margin: 20px auto;
+}
+
+/* Header/Website name styling */
+.website-name {
+  font-size: 36px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  color: #007bff; /* Blue color */
+  font-weight: 700;
+}
+
+/* Content section styling */
+.content {
+  width: 100%;
   max-width: 400px;
+  padding: 20px;
 }
 
-.header {
-  background-color: #007bff;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-h1 {
-  font-size: 24px;
-  margin: 0;
-}
-
-button {
+/* Button styling */
+.button {
   font-size: 18px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -38,42 +43,83 @@ button {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 20px 0;
   transition: background-color 0.3s;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
 }
 
-button:hover {
-  background-color: #0056b3;
+/* Hover effect on buttons */
+.button:hover {
+  background-color: #0056b3; /* Darker blue color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#response {
-  margin-top: 20px;
-  font-size: 16px;
+/* Stop button styling */
+.stop-button {
+  background-color: #ff3333; /* Red color */
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+}
+
+/* Hover effect on stop button */
+.stop-button:hover {
+  background-color: #cc0000; /* Darker red color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for information boxes */
+.box {
+  font-size: 18px;
   color: #333;
   background-color: #f9f9f9;
   padding: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   text-align: left;
   line-height: 1.4;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#response:hover {
+/* Hover effect on information boxes */
+.box:hover {
   background-color: #e9e9e9;
 }
 
-#response p {
+/* Styling for paragraphs inside information boxes */
+.box p {
   margin: 0;
 }
 
-#response strong {
-  font-weight: 700;
-  color: #007bff;
+/* Styling for the commands section title */
+.commands-title {
+  font-size: 24px;
+  margin: 20px 0;
+  text-transform: uppercase;
+  color: #007bff; /* Blue color */
 }
 
+/* Styling for the list of available commands */
+.commands-list {
+  list-style-type: disc;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for individual command items */
+.command-item {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  line-height: 1.6;
+}
+
+/* Styling for the footer */
 .footer {
-  background-color: #007bff;
+  background-color: #007bff; /* Blue color */
   color: #fff;
   text-align: center;
   padding: 10px 0;
@@ -81,24 +127,6 @@ button:hover {
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-.footer p {
-  font-size: 14px;
-  margin: 0;
-}
-#stop-assistant {
-  font-size: 16px;
-  padding: 10px 20px;
-  background-color: #ff3333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-  margin-top: 20px;
-  transition: background-color 0.3s;
-}
-
-#stop-assistant:hover {
-  background-color: #cc0000;
+  text-transform: uppercase;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
